@@ -13,7 +13,7 @@ function App() {
             </Title>
         </Header>
         <section className="mt-28">
-            <TaskCard title="Create task card" resume="Create an example of Task Card component" tags={['Software Design','Feature', 'Component']} date={new Date().toDateString()} inCharge={['Lidia']}/>
+            <TaskCard title="Create task card" tags={['Software Design','Feature', 'Component']} date={new Date().toDateString()} inCharge={['Lidia']}/>
 
         </section>
     </main>
