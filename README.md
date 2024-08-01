@@ -2,7 +2,7 @@
 
 - react testing library [ https://testing-library.com/docs/react-testing-library/intro/ ]
 - cypress [ https://www.cypress.io/ ]
-- mui [ https://mui.com/ ]
+- tailwind css [ https://tailwindcss.com/docs/installation ]
 - React
 - vite
 # vitodo
