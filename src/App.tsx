@@ -1,7 +1,8 @@
 import './App.css'
 import {Header} from "./components/header/header.tsx";
 import {Title} from "./components/title/title.tsx";
-import {TaskCard} from "./components/task-card/task-card.tsx";
+import {Card} from "./components/card/card.tsx";
+import {TaskComponent} from "./features/task/ui/task.component.tsx";
 
 function App() {
 
@@ -13,7 +14,9 @@ function App() {
             </Title>
         </Header>
         <section className="mt-28">
-            <TaskCard title="Create task card" tags={['Software Design','Feature', 'Component']} date={new Date().toDateString()} inCharge={['Lidia']}/>
+            <Card>
+                <TaskComponent title="Create task card" tags={['Software Design','Feature', 'Component']} date={new Date().toDateString()} inCharge={['Lidia']} />
+            </Card>
 
         </section>
     </main>
