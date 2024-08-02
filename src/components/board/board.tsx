@@ -1,7 +1,7 @@
-import {ReactNode} from "react";
+import {ComponentProps} from "../types.ts";
 
-export const Board = ({children }:{ children: ReactNode}) => {
-    return (<div className="grid grid-cols-12 gap-10">
+export const Board = ({className, children }:ComponentProps) => {
+    return (<div className={className}>
                 { children }
             </div>)
 }

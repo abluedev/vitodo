@@ -1,9 +1,9 @@
 import {Task} from "../domain/Task.ts";
 
-export const TaskComponent = ( {title, date, tags, inCharge }: Task) => {
+export const TaskComponent = ( {state = 'to develop', title, date, tags, inCharge }: Task) => {
     return (
         <>
-            <div className="flex w-full items-center">
+            <div className="flex w-full items-center" data-testid={state}>
                 <p className="text-xl font-semibold">{title} </p>
                 <p className="text-xs ml-auto text-slate-300"> {date}</p>
             </div>
