@@ -13,7 +13,7 @@ export const Organizer = () => {
                     <Column className="col-span-12 md:col-span-6 lg:col-span-4 gap-4 flex flex-wrap gap">
                         <State state={stateColumn} />
                         { GetTasks().map(({title, state, date, tags, inCharge}: Task) => {
-                            return   stateColumn ===  state && <Card>
+                            return stateColumn ===  state && <Card>
                                 <TaskComponent state={state} title={title} tags={tags} date={date} inCharge={inCharge} />
                             </Card>
                             })}
