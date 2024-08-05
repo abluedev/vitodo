@@ -1,7 +1,7 @@
 import {Header} from "./components/header/header.tsx";
 import {Title} from "./components/title/title.tsx";
 import {Board} from "./components/board/board.tsx";
-import {Organizer} from "./features/Organizer/ui/organizer.tsx";
+import {OrganizerComponent} from "./features/Organizer/ui/organizer.component.tsx";
 import {TaskPanelComponent} from "./features/Task-panel/ui/task-panel.component.tsx";
 
 function App() {
@@ -16,7 +16,7 @@ function App() {
         </Header>
         <section className="mt-28">
             <Board className="grid grid-cols-12 gap-10">
-                <Organizer></Organizer>
+                <OrganizerComponent></OrganizerComponent>
             </Board>
         </section>
     </main>

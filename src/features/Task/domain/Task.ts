@@ -8,7 +8,6 @@ export interface Task {
     inCharge: string[]
 }
 
-
 export const GetTasks = (): Task[] => {
     return [
         {
@@ -41,3 +40,6 @@ export const GetTasks = (): Task[] => {
         }
     ]
 }
+
+
+
