@@ -3,11 +3,16 @@ import {Title} from "./components/title/title.tsx";
 import {Board} from "./components/board/board.tsx";
 import {OrganizerComponent} from "./features/Organizer/ui/organizer.component.tsx";
 import {TaskPanelComponent} from "./features/Task-panel/ui/task-panel.component.tsx";
+import {ModalProvider} from "./components/provider/modal.context.tsx";
+import {useState} from "react";
 
 function App() {
 
+    const [ showModal, setShowModal ] = useState<boolean>();
+
   return (
-    <main className="p-20">
+      <ModalProvider show={showModal} setShow={setShowModal}>
+      <main className="p-20">
         <TaskPanelComponent title={'Create task panel component'} tags={['Design', 'UI Design', 'Software development']} date={'28/01/1991'} state={'in progress'} inCharge={['Lidia'] }/>
         <Header>
             <Title className="p-4">
@@ -20,6 +25,7 @@ function App() {
             </Board>
         </section>
     </main>
+      </ModalProvider>
   )
 }
 

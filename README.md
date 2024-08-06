@@ -7,6 +7,10 @@
 - vite
 - vitest [ https://vitest.dev/guide/ ] 
 - storybook ( with tailwind: https://storybook.js.org/recipes/tailwindcss)
+- bumpp
+[NPM: https://www.npmjs.com/package/bumpp]
+[Guía: https://github.com/JS-DevTools/version-bump-prompt]
+- 
 # vitodo
 
 

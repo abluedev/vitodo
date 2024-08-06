@@ -5,9 +5,14 @@ import {FaPeopleGroup} from "react-icons/fa6";
 import {useForm} from "react-hook-form";
 import {useMutation} from "@tanstack/react-query";
 import {addTask} from "../../Task/infrastructure/command-task.ts";
+import {AiFillCloseCircle} from "react-icons/ai";
+import {ModalContext} from "../../../components/provider/modal.context.tsx";
+import {useContext} from "react";
 
 
 export const TaskPanelComponent = ({ title, state, tags, inCharge }: Task) => {
+
+    const { setShow } = useContext(ModalContext)
 
     const { register, handleSubmit} = useForm<Task>()
     const { mutate} = useMutation({
@@ -19,7 +24,8 @@ export const TaskPanelComponent = ({ title, state, tags, inCharge }: Task) => {
     }
 
     return (<Modal>
-        <form className="p-8 border-2 rounded-sm bg-white w-4/5" onSubmit={handleSubmit(handleFormSubmit)}>
+        <form className="p-8 border-2 rounded-sm bg-white w-4/5 flex flex-col" onSubmit={handleSubmit(handleFormSubmit)}>
+            <AiFillCloseCircle className="ml-auto" size={24} onClick={() => setShow && setShow(false)}/>
             <div className="p-2">
                 <div className="w-full flex gap-2 items-center">
                     <FaTable/>
