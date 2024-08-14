@@ -1,6 +1,6 @@
-import {States} from "../domain/State.ts";
+import {StateProps} from "../domain/State.ts";
 
-export const State = (state:  States ) => {
-    return <p className={`${state.configuration.color}`}>{state.stateName}</p>
+export const State = ({state}:  {state: StateProps} ) => {
+    return <p className="text-violet-800 uppercase">{state}</p>
 
 }
