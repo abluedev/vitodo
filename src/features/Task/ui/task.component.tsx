@@ -3,10 +3,13 @@ import {useContext} from "react";
 import {ModalContext} from "../../../components/provider/modal.context.tsx";
 
 export const TaskComponent = ( {state = 'to develop', title, date, tags, inCharge }: Task) => {
-    const { setShow } = useContext(ModalContext)
+    const { setShow, setModal } = useContext(ModalContext)
 
     return (
-        <div className="flex flex-wrap gap-2" onClick={() => setShow && setShow(true)}>
+        <div className="flex flex-wrap gap-2" onClick={() => {
+            setShow && setShow(true);
+             setModal && setModal('ORGANIZER');
+        }}>
             <div className="flex flex-wrap gap-0.5 w-full items-center" data-testid={state}>
                 <p className="text-xl font-semibold w-full">{title} </p>
                 <p className="text-xs ml-auto text-slate-300 w-full"> {date}</p>

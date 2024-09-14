@@ -12,7 +12,7 @@ import {useContext} from "react";
 
 export const TaskPanelComponent = ({ title, state, tags, inCharge }: Task) => {
 
-    const { setShow } = useContext(ModalContext)
+    const { setShow, setModal, modal } = useContext(ModalContext);
 
     const { register, handleSubmit} = useForm<Task>()
     const { mutate} = useMutation({
@@ -23,9 +23,14 @@ export const TaskPanelComponent = ({ title, state, tags, inCharge }: Task) => {
         mutate(task)
     }
 
-    return (<Modal>
+    return (
+        <>
+            { modal === "ORGANIZER" && <Modal>
         <form className="p-8 border-2 rounded-sm bg-white w-4/5 flex flex-col" onSubmit={handleSubmit(handleFormSubmit)}>
-            <AiFillCloseCircle className="ml-auto" size={24} onClick={() => setShow && setShow(false)}/>
+            <AiFillCloseCircle className="ml-auto" size={24} onClick={() => {
+                setShow && setShow(false);
+                setModal && setModal('')
+            }}/>
             <div className="p-2">
                 <div className="w-full flex gap-2 items-center">
                     <FaTable/>
@@ -46,5 +51,5 @@ export const TaskPanelComponent = ({ title, state, tags, inCharge }: Task) => {
             </div>
             <button className="p-2 bg-violet-100 w-24 text-violet-500 font-bold rounded-sm"> Save </button>
         </form>
-    </Modal>)
+    </Modal> }</>)
 }

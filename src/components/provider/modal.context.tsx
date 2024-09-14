@@ -1,17 +1,28 @@
-import {createContext, Dispatch, ReactNode, SetStateAction} from "react";
+import {createContext, Dispatch, SetStateAction, ReactNode} from "react";
 
-export const ModalContext = createContext<{
-    show: boolean | undefined,
-    setShow: Dispatch<SetStateAction<boolean | undefined>> | undefined
-}>({
+export type Modal = 'ORGANIZER' | 'CONFIGURATION' | ''
+
+export interface ModalContextProps {
+    show: boolean,
+    setShow: Dispatch<SetStateAction<boolean>> | undefined,
+    setModal: Dispatch<SetStateAction<Modal>> | undefined,
+    modal: Modal;
+}
+
+export const ModalContext = createContext<ModalContextProps>({
     show: false,
-    setShow: undefined
+    setShow: undefined,
+    modal: '',
+    setModal: undefined
 });
 
-export const ModalProvider = ({show, setShow, children }: { show: boolean | undefined, setShow: Dispatch<SetStateAction<boolean | undefined>> | undefined, children: ReactNode }) => {
+export const ModalProvider = ({show, setShow, setModal, modal, children }: { show: boolean, setShow: Dispatch<SetStateAction<boolean>> | undefined, setModal: Dispatch<SetStateAction<Modal>> | undefined, modal: Modal,  children: ReactNode }) => {
 
     return  (<ModalContext.Provider value={{
-        show, setShow
+        show,
+        setShow,
+        setModal,
+        modal
     }}>
                 {children}
         </ModalContext.Provider>)
